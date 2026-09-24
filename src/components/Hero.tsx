@@ -62,7 +62,7 @@ export default function Hero() {
         <div className="relative order-1 mx-auto w-full max-w-[440px] lg:order-2 lg:max-w-[520px]">
           <div className="raios absolute -inset-[35%] -z-10" aria-hidden />
           {/* Balões só em volta do letreiro: nunca passam atrás do texto. */}
-          <div className="pointer-events-none absolute -inset-x-[14%] -bottom-[6%] -top-[40%] -z-10 lg:-bottom-[30%] lg:-left-[2%] lg:-right-[35%] lg:-top-[35%]">
+          <div className="pointer-events-none absolute -inset-x-[18%] -bottom-[10%] -top-[55%] -z-10 lg:-bottom-[35%] lg:-left-[6%] lg:-right-[40%] lg:-top-[50%]">
             <BaloesLazy />
           </div>
           <div data-anim="letreiro" className="letreiro rotate-[1.5deg]">

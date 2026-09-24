@@ -164,6 +164,11 @@ export default function Baloes3D() {
     <div
       ref={mountRef}
       className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-1000 [&>canvas]:block [&>canvas]:h-full [&>canvas]:w-full"
+      // Some suave nas bordas: o balão desaparece em vez de ser cortado no limite da área.
+      style={{
+        maskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%)',
+        WebkitMaskImage: 'radial-gradient(ellipse 50% 50% at 50% 50%, #000 55%, transparent 100%)',
+      }}
       aria-hidden
     />
   )
