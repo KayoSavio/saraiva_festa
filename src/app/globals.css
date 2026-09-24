@@ -24,7 +24,7 @@
 
 html {
   /* Só tema claro: o navegador não escurece o site no modo escuro do celular. */
-  color-scheme: only light;
+  color-scheme: light only;
   scroll-behavior: smooth;
   scroll-padding-top: 6.5rem;
 }

@@ -32,14 +32,14 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: '#C8262C',
-  // O visual é de cartaz claro: impede o celular em modo escuro de inverter as cores sozinho.
-  colorScheme: 'only light',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="pt-BR" className={`${display.variable} ${body.variable} ${label.variable}`} suppressHydrationWarning>
       <head>
+        {/* Visual só claro: pede ao navegador (inclusive Samsung Internet) para não escurecer o site. */}
+        <meta name="color-scheme" content="light only" />
         <script dangerouslySetInnerHTML={{ __html: ANIMA_ESPERA }} />
       </head>
       <body className="antialiased">{children}</body>

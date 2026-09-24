@@ -19,6 +19,13 @@ export const ADDRESS = {
   lng: -44.1237428 as number | null,
 }
 
+/**
+ * Vista do Street View que abre de frente para a fachada.
+ * Tirada de um link do Street View: .../@LAT,LNG,3a,FOVy,HEADINGh,PITCHt/...
+ * Se null, usa o ponto do endereço sem direção definida.
+ */
+export const STREET_VIEW: { lat: number; lng: number; heading: number; pitch: number; fov: number } | null = null
+
 export const ADDRESS_FULL = `${ADDRESS.street} - ${ADDRESS.district}, ${ADDRESS.cityState}, ${ADDRESS.zip}`
 
 export const PRICE_PER_DAY_CENTS = 120_000

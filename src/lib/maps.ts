@@ -1,9 +1,11 @@
-import { ADDRESS, ADDRESS_FULL } from './config'
+import { ADDRESS, ADDRESS_FULL, STREET_VIEW } from './config'
 
 const hasCoords = ADDRESS.lat !== null && ADDRESS.lng !== null
 const coords = hasCoords ? `${ADDRESS.lat},${ADDRESS.lng}` : null
 // O endereço escrito acha o número certo; as coordenadas servem para o Street View.
 const query = encodeURIComponent(ADDRESS_FULL)
+
+const PANO = 'https://www.google.com/maps/@?api=1&map_action=pano'
 
 /** Links sem chave de API: funcionam no celular abrindo o app do Maps/Waze. */
 export const maps = {
@@ -11,6 +13,10 @@ export const maps = {
   open: `https://www.google.com/maps/search/?api=1&query=${query}`,
   route: `https://www.google.com/maps/dir/?api=1&destination=${query}`,
   waze: `https://waze.com/ul?q=${query}&navigate=yes`,
-  /** Street View precisa das coordenadas exatas. */
-  streetView: coords ? `https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=${coords}` : null,
+  /** Street View: abre na vista configurada (posição + direção) ou, sem ela, no ponto do endereço. */
+  streetView: STREET_VIEW
+    ? `${PANO}&viewpoint=${STREET_VIEW.lat},${STREET_VIEW.lng}&heading=${STREET_VIEW.heading}&pitch=${STREET_VIEW.pitch}&fov=${STREET_VIEW.fov}`
+    : coords
+      ? `${PANO}&viewpoint=${coords}`
+      : null,
 }
