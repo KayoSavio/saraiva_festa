@@ -32,6 +32,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: '#C8262C',
+  // O visual é de cartaz claro: impede o celular em modo escuro de inverter as cores sozinho.
+  colorScheme: 'only light',
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

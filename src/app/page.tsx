@@ -111,14 +111,14 @@ export default function Home() {
             className="ingresso mx-auto flex max-w-4xl -rotate-1 flex-col overflow-hidden rounded-3xl bg-ouro text-cartola shadow-[0_24px_50px_-24px_rgb(26_18_14/0.55)] md:flex-row md:rounded-none"
             style={{ ['--corte' as string]: '66%' }}
           >
-            <div className="relative flex-1 p-8 md:p-10">
+            <div className="relative min-w-0 flex-1 p-6 sm:p-8 md:p-10">
               <p className="font-label text-sm">Ingresso · diária completa</p>
-              <p className="mt-2 font-display text-6xl md:text-8xl">{formatBRL(PRICE_PER_DAY_CENTS)}</p>
+              <p className="mt-2 whitespace-nowrap font-display text-[clamp(2.5rem,14vw,4.5rem)] md:text-7xl lg:text-8xl">{formatBRL(PRICE_PER_DAY_CENTS)}</p>
               <p className="mt-4 max-w-md">
                 O salão fica só seu o dia inteiro, com tudo aquilo ali de cima incluso. Sem taxa para reservar pelo site.
               </p>
             </div>
-            <div className="flex flex-col justify-center gap-3 border-t-[3px] border-dashed border-cartola/40 bg-veludo p-8 text-palco-claro md:w-[34%] md:border-l-[3px] md:border-t-0 md:p-10">
+            <div className="flex flex-col justify-center gap-3 border-t-[3px] border-dashed border-cartola/40 bg-veludo p-6 text-palco-claro sm:p-8 md:w-[34%] md:border-l-[3px] md:border-t-0 md:p-10">
               <p className="font-label text-sm text-ouro-claro">Admite</p>
               <p className="font-display text-3xl leading-tight">até {MAX_GUESTS} convidados</p>
               <a
