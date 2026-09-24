@@ -26,10 +26,13 @@ html {
   /* Só tema claro: o navegador não escurece o site no modo escuro do celular. */
   color-scheme: light only;
   scroll-behavior: smooth;
+  /* Nada pode alargar a página no celular (faixa inclinada, mascotes, balões). */
+  overflow-x: clip;
   scroll-padding-top: 6.5rem;
 }
 
 body {
+  overflow-x: clip;
   background: var(--color-palco);
   color: var(--color-cartola);
   font-family: var(--font-body);
@@ -289,6 +292,16 @@ body {
     --rdp-day-width: 40px;
     --rdp-day_button-height: 36px;
     --rdp-day_button-width: 36px;
+  }
+}
+
+/* Celulares estreitos: 7 colunas precisam caber no card. */
+@media (max-width: 380px) {
+  .agenda .rdp-root {
+    --rdp-day-height: 36px;
+    --rdp-day-width: 36px;
+    --rdp-day_button-height: 33px;
+    --rdp-day_button-width: 33px;
   }
 }
 
